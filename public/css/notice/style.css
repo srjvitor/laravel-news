@@ -1,0 +1,78 @@
+.notice-container {
+  background-color: whitesmoke;
+  max-width: 1080px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+}
+.notice-container .container {
+  width: 95%;
+  height: 95%;
+  background-color: white;
+  border: 1px solid #ddd6d6;
+  border-radius: 3px;
+  overflow: hidden;
+  margin: auto;
+}
+.notice-container .container .title-container {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #ef5959;
+  background-color: #ef5959;
+}
+.notice-container .container .title-container h2 {
+  color: white;
+  font-size: 18px;
+}
+.notice-container .container .content-container {
+  min-height: 100%;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+}
+.notice-container .container .content-container .text-container {
+  width: 99%;
+  margin: 0.5% auto 0;
+  border: 1px solid #ddd6d6;
+  border-radius: 2px;
+}
+.notice-container .container .content-container .text-container p {
+  font-size: 14px;
+  color: #505050;
+  text-indent: 20px;
+  text-align: justify;
+  padding: 30px 20px;
+  line-height: 18px;
+}
+.notice-container .container .content-container .text-container p::first-letter {
+  color: #ef5959;
+  font-size: 30px;
+}
+.notice-container .container .content-container .info-container {
+  width: 99%;
+  height: 30px;
+  margin: 0.5% auto;
+  border: 1px solid #ddd6d6;
+  background-color: #ef5959;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.notice-container .container .content-container .info-container ul {
+  font-size: 13px;
+  display: flex;
+}
+.notice-container .container .content-container .info-container ul li {
+  color: white;
+  margin-right: 50px;
+  list-style: circle !important;
+}
+.notice-container .container .content-container .info-container ul li:last-child {
+  margin-right: 0;
+}
+
+/*# sourceMappingURL=style.css.map */

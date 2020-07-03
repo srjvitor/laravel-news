@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,8 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/teste', function(Request $request) {
-    ${ data } = $request;
-    
-    return $data;
-});
+Route::post('newuser', 'UserController@store');
+Route::post('login', 'UserController@show');

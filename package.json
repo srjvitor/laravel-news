@@ -1,6 +1,11 @@
 {
     "private": true,
     "scripts": {
+        "server": "php artisan serve --host=10.0.0.10 --port=8000",
+        "sass-notice": "sass --watch resources/sass/notice.scss public/css/notice/style.css",
+        "sass-new": "sass --watch resources/sass/new.scss public/css/new/style.css",
+        "sass-session": "sass --watch resources/sass/session.scss public/css/session/style.css",
+        "sass-home": "sass --watch resources/sass/home.scss public/css/home/style.css",
         "dev": "npm run development",
         "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
         "watch": "npm run development -- --watch",
