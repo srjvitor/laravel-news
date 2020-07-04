@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +16,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/register/{register_status?}', 'RegisterController@create')->name('register');
+
+Route::get('/login/{register_success?}', 'LoginController@create')->name('login');
+
+Route::get('/{category?}', 'HomeController@index')->name('home');
+
 Route::get('/new', function () {
     return view('home.new');
 })->name('new');
@@ -21,14 +30,4 @@ Route::get('/notice/{id?}', function ($id = null) {
     return view('home.notice', ['id' => $id]);
 })->name('notice');
 
-Route::get('/', function () {
-    return view('home.feed');
-})->name('home');
 
-Route::get('/register/{register_status?}', function ($register_status = null) {
-    return view('session.register', ['status' => $register_status]);
-})->name('register');
-
-Route::get('/login/{register?}', function ($register = null) {
-    return view('session.login', ['register' => $register]);
-})->name('login');

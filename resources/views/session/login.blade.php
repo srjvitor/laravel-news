@@ -5,6 +5,8 @@
 @section('content')
   <section>
     <form id="login" method="POST" action="api/login">
+			@csrf
+			{{ print_r(session('user_id')) }}
       <h3>Login</h3>
       <div>                                                            
           <label for="email">Email</label>
@@ -19,8 +21,8 @@
     <span>Não tem conta?<a href="{{ route('register') }}">Cadastre-se</a></span>         
     <div>
       <span>
-        @isset ($register)
-          @if($register == true)
+        @isset ($register_success)
+          @if($register_success == true)
             Cadastro efetuado com sucesso! Efetue o login
           @endif
         @endisset

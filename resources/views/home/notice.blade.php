@@ -5,8 +5,8 @@
 @section('content')
   <div class="notice-container">
     <div class="container">  
-      <div class="title-container">        
-        <h2>Título da postagem</h2>
+      <div class="title-container">  
+        <h2>Título da postagem</h2>        
       </div>
       <div class="content-container">
         <div class="text-container">          
@@ -19,9 +19,17 @@
         <div class="info-container">
           <ul>
             <li>Em assunto 1</li>
-            <li>4.9 estrelas</li>
-            <li>Escrito por Antonio Gutierres</li>
+            <li title="Nota de avaliação">
+              4.9 de avaliação
+            </li>
+            <li title="Author">Escrito por Antonio Gutierres</li>
+            <li>
+              <time datetime="2020-06-23 19:00" title="Data de postagem">23/06/2020 às 19:00</time>
+            </li>
           </ul> 
+        </div>
+        <div class="comments-container">
+          
         </div>
       </div>      
     </div class="container">

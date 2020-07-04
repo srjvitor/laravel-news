@@ -7,9 +7,8 @@ use Redirect;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class UserController extends Controller
-{
-    public function store(request $request){
+class UserController extends Controller {
+    public function store(Request $request){
 
         $user = new User;
         
@@ -18,23 +17,23 @@ class UserController extends Controller
         $user->password = $request->password;  
 
         if( $user->save()) {
-          return redirect()->route('login', ['register' => true]);
+          return redirect()->route('login', ['register_success' => true]);
         }    
     }
 
-    public function show(request $request){
+    public function show(Request $request){
 
-      $users = DB::table('users')->where([
+			$user = DB::table('users')
+			->where([
         ['email', '=', $request->email],
         ['password', '=', $request->password],
-      ])->get('id');
+			])
+			->first();
 
-      if( $users ){
-        return response()->json([ 'users' => $users ]);
-      }else{
-        return response()->json([ 'users' => 'falso' ]);
-      }
-
-      
+			if (empty($user->id)){
+				return response()->json(['login', 'false']);
+			}else{
+				return redirect()->route('home', ['register_success' => true]);
+			}
     }
 }
