@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Comment extends Model
 {
-	protected $dateFormat = "H:i:s d/m/Y";
+	protected $dateFormat = "H:i:s d/m/Y";asdsadasdasd
 }
